@@ -1,6 +1,7 @@
 """Console script for data_narrative."""
 
 import fire
+import duckdb
 
 
 def help() -> None:
