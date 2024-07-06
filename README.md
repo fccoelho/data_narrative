@@ -18,7 +18,7 @@
 </p>
 
 
-Tool to generate natural language narrative for a database table
+This is a tool to generate natural language narrative for a database table. These narratives can have multiple applications, such as simply describing datasets, or generating reports. The narratives are generated using a template-based approach, where the user can define the structure of the narrative using a simple template based on the [Jinja2](https://jinja.palletsprojects.com) templating engine.
 
 
 * Free software: MIT
@@ -27,7 +27,8 @@ Tool to generate natural language narrative for a database table
 
 ## Features
 
-* replaced Black, Isort and Flake8 with [Ruff](https://docs.astral.sh/ruff/)
+* Support for different types of narratives
+  * Structural narrative: Just gives the name of table and enumerates the columns in the table, as well as the number of rows.
 
 ## Credits
 
