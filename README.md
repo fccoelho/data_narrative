@@ -30,6 +30,4 @@ This is a tool to generate natural language narrative for a database table. Thes
 * Support for different types of narratives
   * Structural narrative: Just gives the name of table and enumerates the columns in the table, as well as the number of rows.
 
-## Credits
 
-This package was created with the [ppw](https://zillionare.github.io/python-project-wizard) tool. For more information, please visit the [project page](https://zillionare.github.io/python-project-wizard/).
