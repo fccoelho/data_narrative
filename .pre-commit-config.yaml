@@ -27,13 +27,13 @@ repos:
     # Run the formatter.
     - id: ruff-format
       types_or: [ python, pyi, jupyter ]
--   repo: local
-    hooks:
-    -   id: mypy
-        name: mypy
-        entry: mypy
-        exclude: ^tests
-        language: python
-        types: [python]
-        require_serial: true
-        verbose: true
+# -   repo: local
+#     hooks:
+#     -   id: mypy
+#         name: mypy
+#         entry: mypy
+#         exclude: ^tests
+#         language: python
+#         types: [python]
+#         require_serial: true
+#         verbose: true

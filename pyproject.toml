@@ -23,31 +23,11 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.10,<4.0"
-fire = "0.4.0"
-
-ruff  = { version = "^0.5.0", optional = true}
-pytest  = { version = "^7.0.1", optional = true}
-pytest-cov  = { version = "^3.0.0", optional = true}
-tox  = { version = "^3.24.5", optional = true}
-mkdocs  = { version = "^1.2.3", optional = true}
-mkdocs-include-markdown-plugin  = { version = "^3.2.3", optional = true}
-mkdocs-material  = { version = "^8.1.11", optional = true}
-mkdocstrings  = { version = "^0.18.0", optional = true}
-mkdocs-material-extensions  = { version = "^1.0.3", optional = true}
-twine  = { version = "^3.8.0", optional = true}
-mkdocs-autorefs = {version = "^0.3.1", optional = true}
-pre-commit = {version = "^2.17.0", optional = true}
-toml = {version = "^0.10.2", optional = true}
-livereload = {version = "^2.6.3", optional = true}
-pyreadline = {version = "^2.1", optional = true}
-mike = { version="^1.1.2", optional=true}
-mypy = {version = "^1.5.1", optional = true}
-setuptools = {version="^68.0", optional = true}
-pkginfo = {version="^1.9", optional = true}
-virtualenv = {version="^20.0", optional = true}
+python = ">=3.11,<4.0"
+fire  = "^0.6.0"
 duckdb = "^1.0.0"
 jinja2 = "^3.1.4"
+reg-d-bot = {git = "https://github.com/Deeplearn-PeD/reg"}
 
 [tool.poetry.extras]
 test = [
