@@ -6,7 +6,9 @@ repo_name: data_narrative
 nav:
   - home: index.md
   - installation: installation.md
-  - usage: usage.md
+  - usage:
+      - Library use: usage.md
+      - Data Exploration: basic_exploration.ipynb
   - modules: api.md
   - contributing: contributing.md
   - authors: authors.md
@@ -31,6 +33,7 @@ theme:
     - navigation.tabs
     - navigation.instant
     - navigation.tabs.sticky
+    - content.code.copy
 markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
@@ -60,6 +63,15 @@ plugins:
   - mkdocstrings:
       watch:
         - data_narrative
+  - mkdocs-jupyter:
+        execute: true
+        jupyter_options:
+            hide_input: false
+            hide_output: false
+            collapse_output: false
+            collapse_show: false
+            ignore:
+            - "**/data_narrative/**"
 extra:
   version:
     provider: mike
@@ -68,10 +80,10 @@ extra:
       # replace with your own tweet link below
       link: http://www.jieyu.ai
       name: Tweet
-    - icon: fontawesome/brands/facebook
-      # replace with your own facebook link below
-      link: http://www.jieyu.ai
-      name: Facebook
+#     - icon: fontawesome/brands/facebook
+#       # replace with your own facebook link below
+#       link: http://www.jieyu.ai
+#       name: Facebook
     - icon: fontawesome/brands/github
       link: https://github.com/fccoelho/data_narrative
       name: Github

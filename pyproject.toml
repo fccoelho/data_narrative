@@ -29,33 +29,30 @@ duckdb = "^1.0.0"
 jinja2 = "^3.1.4"
 reg-d-bot = {git = "https://github.com/Deeplearn-PeD/reg"}
 
-[tool.poetry.extras]
-test = [
-    "pytest",
-    "pytest-cov"
-    ]
+[tool.poetry.group.test.dependencies]
+pytest = "*"
+pytest-cov = "*"
 
-dev = ["tox",
-    "pre-commit",
-    "twine",
-    "toml",
-    "flake8-docstrings",
-    "mypy",
-    "ruff"
-    ]
+[tool.poetry.group.dev.dependencies]
+tox = "*"
+pre-commit = "*"
+twine = "*"
+toml = "*"
+flake8-docstrings = "*"
+ruff = "*"
 
-doc = [
-    "mkdocs",
-    "mkdocs-include-markdown-plugin",
-    "mkdocs-material",
-    "mkdocstrings",
-    "mkdocs-material-extension",
-    "mkdocs-autorefs",
-    "mike",
-    "setuptools",
-    "pkginfo",
-    "virtualenv"
-    ]
+[tool.poetry.group.doc.dependencies]
+mkdocs = "*"
+mkdocs-include-markdown-plugin = "*"
+mkdocs-material  = "*"
+mkdocstrings = "*"
+mkdocs-material-extensions = "*"
+mkdocs-autorefs = "*"
+mkdocs-jupyter = "*"
+mike = "*"
+setuptools = "*"
+pkginfo = "*"
+virtualenv = "*"
 
 [tool.poetry.scripts]
 data_narrative = 'data_narrative.cli:main'
