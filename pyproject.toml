@@ -26,7 +26,7 @@ doc = [
 ]
 
 [tool.uv.sources]
-reg-d-bot = { git = "https://github.com/Deeplearn-PeD/reg" }
+reg-d-bot = { git = "https://github.com/Deeplearn-PeD/reg", branch = "main" }
 
 [tool.pdm.build]
 includes = ["data_narrative", "tests"]

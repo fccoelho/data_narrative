@@ -15,26 +15,29 @@ class StructuralNarrative:
         self.database = dbt.Database(dburl, model)
 
     def generate(self, table: str) -> str:
-        sample = self.database._get_sample_rows(table)
+        rows = self.database._get_sample_rows(table)
         description = self.database.get_table_description(table, raw=True)
-        columns = [
-            col.split(":")[1]
-            for col in description.split("\n")
-            if col.startswith("column")
-        ]
-        rows = sample
-        return self.render(table, columns, rows)
+        return self.render(table, description, rows)
 
     def render(
         self, table: str, columns: List, rows: List, save_to_file: bool = True
     ) -> str:
         template = jinja2.Template(
             """
-            # Structural Narrative for database table {{ table }}
-            Table: {{ table }}
-            Columns: {{ columns | join(', ') }}
-            Rows: {{ rows | length }}
-            """
+# Structural Narrative for database table {{ table }}
+## Table Summary
+{% for col in columns -%}
+{%- if loop.first -%}
+| Name | type | description |
+|:-----|:----:|:-----------:|
+{% endif %}
+{{- col[0] }} | {{ col[1] }} | {{ col[2] }} |
+{% endfor %}
+### Sample Rows
+{% for row in rows -%}
+{{- row }}
+{% endfor %}
+"""
         )
         report = template.render(table=table, columns=columns, rows=rows)
         if save_to_file:

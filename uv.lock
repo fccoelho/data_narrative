@@ -397,7 +397,7 @@ requires-dist = [
     { name = "duckdb", specifier = ">=1.0.0,<2.0.0" },
     { name = "fire", specifier = ">=0.6.0,<1.0.0" },
     { name = "jinja2", specifier = ">=3.1.4,<4.0.0" },
-    { name = "reg-d-bot", git = "https://github.com/Deeplearn-PeD/reg" },
+    { name = "reg-d-bot", git = "https://github.com/Deeplearn-PeD/reg?branch=main" },
 ]
 
 [package.metadata.requires-dev]
@@ -1819,8 +1819,8 @@ wheels = [
 
 [[package]]
 name = "reg-d-bot"
-version = "0.6.2"
-source = { git = "https://github.com/Deeplearn-PeD/reg#e06a988db9638c40c97d20fb7a516cad67cc3e98" }
+version = "0.7.0"
+source = { git = "https://github.com/Deeplearn-PeD/reg?branch=main#4ece22c4614c53bb0db96936f9f180427b116293" }
 dependencies = [
     { name = "base-ai-agent" },
     { name = "deltalake" },
