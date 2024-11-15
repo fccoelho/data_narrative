@@ -9,6 +9,7 @@ dev-dependencies = [
     "toml",
     "flake8-docstrings",
     "ruff",
+    "pytest>=8.3.3",
 ]
 doc = [
     "mkdocs",
@@ -23,6 +24,9 @@ doc = [
     "pkginfo",
     "virtualenv",
 ]
+
+[tool.uv.sources]
+reg-d-bot = { git = "https://github.com/Deeplearn-PeD/reg" }
 
 [tool.pdm.build]
 includes = ["data_narrative", "tests"]
@@ -117,7 +121,7 @@ dependencies = [
     "fire<1.0.0,>=0.6.0",
     "duckdb<2.0.0,>=1.0.0",
     "jinja2<4.0.0,>=3.1.4",
-    "reg-d-bot @ git+https://github.com/Deeplearn-PeD/reg",
+    "reg-d-bot",
 ]
 name = "data_narrative"
 version = "0.1.0"
