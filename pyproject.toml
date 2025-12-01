@@ -1,30 +1,5 @@
 [tool]
 
-[tool.uv]
-test = ["pytest", "pytest-cov"]
-dev-dependencies = [
-    "tox",
-    "pre-commit",
-    "twine",
-    "toml",
-    "flake8-docstrings",
-    "ruff",
-    "pytest>=8.3.3",
-]
-doc = [
-    "mkdocs",
-    "mkdocs-include-markdown-plugin",
-    "mkdocs-material",
-    "mkdocstrings",
-    "mkdocs-material-extensions",
-    "mkdocs-autorefs",
-    "mkdocs-jupyter",
-    "mike",
-    "setuptools",
-    "pkginfo",
-    "virtualenv",
-]
-
 [tool.uv.sources]
 reg-d-bot = { git = "https://github.com/Deeplearn-PeD/reg", branch = "main" }
 
@@ -116,12 +91,13 @@ docstring-code-line-length = "dynamic"
 [project]
 authors = [{ name = "Flávio Codeço Coelho", email = "fccoelho@gmail.com" }]
 license = { text = "MIT" }
-requires-python = "<4.0,>=3.11"
+requires-python = "<4.0,>=3.12"
 dependencies = [
     "fire<1.0.0,>=0.6.0",
     "duckdb<2.0.0,>=1.0.0",
     "jinja2<4.0.0,>=3.1.4",
     "reg-d-bot",
+    "jupyter>=1.1.1",
 ]
 name = "data_narrative"
 version = "0.1.0"
@@ -143,3 +119,29 @@ homepage = "https://github.com/fccoelho/data_narrative"
 
 [project.scripts]
 data_narrative = "data_narrative.cli:main"
+
+[project.optional-dependencies]
+test = ["pytest", "pytest-cov"]
+doc = [
+    "mkdocs",
+    "mkdocs-include-markdown-plugin",
+    "mkdocs-material",
+    "mkdocstrings",
+    "mkdocs-material-extensions",
+    "mkdocs-autorefs",
+    "mkdocs-jupyter",
+    "mike",
+    "setuptools",
+    "pkginfo",
+    "virtualenv",
+]
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.5.0",
+    "pytest>=9.0.1",
+    "ruff>=0.14.7",
+    "toml>=0.10.2",
+    "tox>=4.32.0",
+    "twine>=6.2.0",
+]

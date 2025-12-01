@@ -9,9 +9,9 @@ class StructuralNarrative:
     A class to generate a structural narrative for a database table
     """
 
-    def __init__(self, dburl: str, llm: str = "llama3.2"):
+    def __init__(self, dburl: str, llm: str = "qwen3"):
         self.dburl = dburl
-        model = LangModel(llm)
+        model = LangModel(llm, provider='ollama')
         self.database = dbt.Database(dburl, model)
 
     def generate(self, table: str) -> str:
